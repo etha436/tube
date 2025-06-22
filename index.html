@@ -15,61 +15,51 @@
     rel="stylesheet"
   />
   <style>
-    /* ========== GENERAL STYLES ========== */
-    * {
-      box-sizing: border-box;
-    }
-
+    /* Combine all CSS files here */
     body {
       margin: 0;
-      font-family: Roboto, Arial;
       padding-top: 80px;
       padding-left: 96px;
       padding-right: 24px;
       background-color: rgb(238, 238, 238);
+      font-family: Roboto, Arial;
     }
-
     p {
       margin: 0;
     }
-
-    /* ========== HEADER ========== */
     .header {
       height: 55px;
       display: flex;
+      flex-direction: row;
       justify-content: space-between;
-      align-items: center;
       position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
+      top: 0px;
+      left: 0px;
+      right: 0px;
       background-color: white;
       border-bottom: 1px solid rgb(241, 241, 241);
       z-index: 2;
     }
-
     .left-section {
       display: flex;
       align-items: center;
     }
-
     .hamburger-menu {
       height: 24px;
-      margin: 0 24px;
+      margin-left: 24px;
+      margin-right: 24px;
     }
-
     .youtube-logo {
       height: 20px;
     }
-
     .middle-section {
+      flex: 1;
+      margin-left: 70px;
+      margin-right: 35px;
+      max-width: 500px;
       display: flex;
       align-items: center;
-      flex: 1;
-      margin: 0 35px 0 70px;
-      max-width: 500px;
     }
-
     .user {
       flex: 1;
       height: 36px;
@@ -79,19 +69,9 @@
       border-radius: 2px;
       box-shadow: inset 1px 2px 3px rgba(0, 0, 0, 0.05);
     }
-
     .user::placeholder {
       font-size: 16px;
     }
-
-    .search-button,
-    .voice-search-button {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: relative;
-    }
-
     .search-button {
       height: 41px;
       width: 66px;
@@ -99,24 +79,28 @@
       border: 1px solid rgb(169, 169, 169);
       margin-left: -2px;
       margin-right: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
     }
-
-    .search-icon {
-      height: 25px;
-    }
-
     .voice-search-button {
       height: 40px;
       width: 40px;
       border-radius: 20px;
       border: none;
       background-color: rgb(243, 243, 243);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
     }
-
+    .search-icon {
+      height: 25px;
+    }
     .voice-search-icon {
       height: 24px;
     }
-
     .tooltip {
       font-family: Roboto, Arial;
       position: absolute;
@@ -131,7 +115,6 @@
       pointer-events: none;
       white-space: nowrap;
     }
-
     .search-button:hover .tooltip,
     .voice-search-button:hover .tooltip,
     .upload-icone-container:hover .tooltip,
@@ -139,7 +122,6 @@
     .notications-icon-count-container:hover .tooltip {
       opacity: 1;
     }
-
     .right-section {
       width: 200px;
       display: flex;
@@ -148,22 +130,18 @@
       margin-right: 20px;
       flex-shrink: 0;
     }
-
     .upload-icon,
     .youtube-apps-icon,
     .notifications-icon {
       height: 24px;
     }
-
     .current-user-picture {
       height: 32px;
       border-radius: 50%;
     }
-
     .notifications-icon-container {
       position: relative;
     }
-
     .notifications-count {
       position: absolute;
       top: -2px;
@@ -174,188 +152,259 @@
       padding: 2px 5px;
       border-radius: 10px;
     }
-
-    /* ========== SIDEBAR ========== */
     .sidebar {
       position: fixed;
-      top: 55px;
-      bottom: 0;
       left: 0;
+      bottom: 0;
+      top: 55px;
       background-color: white;
       width: 72px;
       z-index: 200;
       padding-top: 5px;
     }
-
     .sidebar-link {
       height: 74px;
       display: flex;
-      flex-direction: column;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       cursor: pointer;
+      flex-direction: column;
     }
-
     .sidebar-link:hover {
       background-color: rgb(238, 238, 238);
     }
-
     .sidebar-link img {
       height: 24px;
       margin-bottom: 5px;
     }
-
     .sidebar-link div {
       font-size: 10px;
     }
-
-    /* ========== VIDEO SECTION ========== */
     .video-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: 1fr 1fr 1fr;
       column-gap: 16px;
       row-gap: 30px;
     }
-
     @media (max-width: 750px) {
       .video-grid {
         grid-template-columns: 1fr 1fr;
       }
     }
-
     @media (min-width: 1000px) {
       .video-grid {
         grid-template-columns: 1fr 1fr 1fr 1fr;
       }
     }
-
-    @media (min-width: 750px) and (max-width: 999px) {
-      .video-grid {
-        grid-template-columns: 1fr 1fr 1fr;
-      }
+    .row {
+      margin-bottom: 10px;
+      position: relative;
     }
-
     .fourle {
       width: 100%;
-      height: auto;
-      display: block;
+      position: relative;
     }
-
     .fourle2 {
       width: 40px;
       height: 40px;
       border-radius: 50%;
     }
-
     .video-time {
+      background-color: black;
+      color: white;
       position: absolute;
       bottom: 10px;
       right: 8px;
-      background-color: black;
-      color: white;
       font-size: 12px;
       font-weight: 500;
       padding: 4px;
       border-radius: 2px;
     }
-
     .video-info-grid {
       display: grid;
       grid-template-columns: 50px 1fr;
     }
-
-    .row {
-      margin-bottom: 10px;
-      position: relative;
-    }
-
     .vide {
-      margin-top: 0;
       font-size: 15px;
       font-weight: 500;
       line-height: 20px;
       margin-bottom: 10px;
     }
-
     .mar,
     .vieu {
       font-size: 13px;
       color: gray;
     }
-
     .mar {
       margin-bottom: 4px;
     }
   </style>
 </head>
 <body>
-  <!-- Header -->
-  <div class="header">
-    <div class="left-section">
-      <img class="hamburger-menu" src="Icones/youtube icone.svg" />
-      <img class="youtube-logo" src="Icones/youtube-logo.svg" />
-    </div>
-    <div class="middle-section">
-      <input class="user" type="text" placeholder="Search" />
-      <button class="search-button">
-        <img class="search-icon" src="Icones/search.svg" />
-        <div class="tooltip">Search</div>
-      </button>
-      <button class="voice-search-button">
-        <img class="voice-search-icon" src="Icones/voice-search-icon.svg" />
-        <div class="tooltip">Search with your voice</div>
-      </button>
-    </div>
-    <div class="right-section">
-      <div class="upload-icone-container">
-        <img class="upload-icon" src="Icones/upload.svg" />
-        <div class="tooltip">Create</div>
-      </div>
-      <div class="youtube-apps-icon-container">
-        <img class="youtube-apps-icon" src="Icones/youtube-apps.svg" />
-        <div class="tooltip">YouTube apps</div>
-      </div>
-      <div class="notications-icon-count-container">
-        <div class="notifications-icon-container">
-          <img class="notifications-icon" src="Icones/notifications.svg" />
-          <div class="notifications-count">3</div>
-          <div class="tooltip">Notifications</div>
+ <div class="header">
+        <div class="left-section">
+            <img class="hamburger-menu" src="Icones/youtube icone.svg">
+            <img class="youtube-logo" src="Icones/youtube-logo.svg">
         </div>
-      </div>
-      <img class="current-user-picture" src="images/charingan.jpg" />
+        <div class="middle-section">
+            <input class="user" type="text" placeholder=" Search">
+            <button class="search-button">
+                <img class="search-icon" src="Icones/search.svg">
+                <div class="tooltip">Search</div>
+            </button>
+            <button class="voice-search-button">
+                <img class="voice-search-icon" src="Icones/voice-search-icon.svg">
+                <div class="tooltip">Search with your voice</div>
+            </button>
+        </div>
+        <div class="right-section">
+            <div class="upload-icone-container">
+                <img class="upload-icon" src="Icones/upload.svg">
+                <div class="tooltip">Create</div>
+            </div>
+            <div class="youtube-apps-icon-container">
+                <img class="youtube-apps-icon" src="Icones/youtube-apps.svg">
+                <div class="tooltip">YouTube apps </div>
+            </div>
+            <div class="notications-icon-count-container">
+                <div class="notifications-icon-container">
+                    <img class="notifications-icon" src="Icones/notifications.svg">
+                    <div class="notifications-count">3</div>
+                    <div class="tooltip">Notifications</div>
+                </div>
+            </div>
+            <img class="current-user-picture" src="images/charingan.jpg">
+        </div>
     </div>
-  </div>
+    <div class="sidebar">
+        <div class="sidebar-link">
+            <img src="Icones/home.svg">
+            <div>Home</div>
+        </div>
+        <div class="sidebar-link">
+            <img src="Icones/explore.svg">
+            <div>Explore</div>
+        </div>
+        <div class="sidebar-link">
+            <img src="Icones/subscriptions.svg">
+            <div>Subscriptions</div>
+        </div>
+        <div class="sidebar-link">
+            <img src="Icones/originals.svg">
+            <div>Originals</div>
+        </div>
+        <div class="sidebar-link">
+            <img src="Icones/youtube-music.svg">
+            <div>YouTube Music</div>
+        </div>
+        <div class="sidebar-link">
+            <img src="Icones/library.svg">
+            <div>Library</div>
+        </div>
+    </div>
+    <div class="video-grid">
+        <div class="first">
+            <div class="row">
+                <img class="fourle" src="images\aizen.jpg">
+                <div class="video-time"> 34:30 </div>
+            </div>
+            <div class="video-info-grid ">
+                <div class="channel-picture">
+                    <img class="fourle2" src="images\aizen.jpg">
+                </div>
+                <div class="video-info">
+                    <p class="vide">Talking Tech and AI use with google
+                        CEO Sundar Pichail hkshhkfskerueoruouore</p>
+                    <p class="mar"> Marques BrownLee &#10003;</p>
+                    <p class="vieu"> 3.4M views &#183;6 months ago </p>
+                </div>
+            </div>
+        </div>
 
-  <!-- Sidebar -->
-  <div class="sidebar">
-    <div class="sidebar-link"><img src="Icones/home.svg" /><div>Home</div></div>
-    <div class="sidebar-link"><img src="Icones/explore.svg" /><div>Explore</div></div>
-    <div class="sidebar-link"><img src="Icones/subscriptions.svg" /><div>Subscriptions</div></div>
-    <div class="sidebar-link"><img src="Icones/originals.svg" /><div>Originals</div></div>
-    <div class="sidebar-link"><img src="Icones/youtube-music.svg" /><div>YouTube Music</div></div>
-    <div class="sidebar-link"><img src="Icones/library.svg" /><div>Library</div></div>
-  </div>
+        <div class="first">
+            <div class="row">
+                <img class="fourle" src="images\jogo.jpg">
+                <div class="video-time"> 21:50 </div>
+            </div>
+            <div class="video-info-grid">
+                <div class="channel-picture">
+                    <img class="fourle2" src="images\jogo.jpg">
+                </div>
+                <div class="video-info">
+                    <p class="vide">The coolest Anime Characters </p>
+                    <p class="mar"> Otaku premium &#10003;</p>
+                    <p class="vieu"> 5.4M views &#183; 5 months ago </p>
+                </div>
+            </div>
+        </div>
 
-  <!-- Video Grid -->
-  <div class="video-grid">
-    <!-- Just copy-paste more of these blocks to add videos -->
-    <div class="first">
-      <div class="row">
-        <img class="fourle" src="images/aizen.jpg" />
-        <div class="video-time">34:30</div>
-      </div>
-      <div class="video-info-grid">
-        <div class="channel-picture">
-          <img class="fourle2" src="images/aizen.jpg" />
+        <div class="first">
+            <div class="row">
+                <img class="fourle" src="images\aizen.jpg">
+                <div class="video-time"> 25:30 </div>
+            </div>
+            <div class="video-info-grid ">
+                <div class="channel-picture">
+                    <img class="fourle2" src="images\charingan.jpg">
+                </div>
+                <div class="video-info">
+                    <p class="vide">Madara speech </p>
+                    <p class="mar"> Uchiha fans &#10003;</p>
+                    <p class="vieu"> 33.4M views &#183;6 months ago </p>
+                </div>
+            </div>
         </div>
-        <div class="video-info">
-          <p class="vide">Talking Tech and AI use with Google CEO</p>
-          <p class="mar">Marques Brownlee ✔</p>
-          <p class="vieu">3.4M views • 6 months ago</p>
+
+        <div class="first">
+            <div class="row">
+                <img class="fourle" src="images\slayer.jpg">
+                <div class="video-time"> 14:30 </div>
+            </div>
+            <div class="video-info-grid">
+                <div class="channel-picture">
+                    <img class="fourle2" src="images\slayer.jpg">
+                </div>
+                <div class="video-info">
+                    <p class="vide">Demon slayer layout </p>
+                    <p class="mar"> Otaku premium &#10003;</p>
+                    <p class="vieu"> 10.4M views &#183; 5 months ago </p>
+                </div>
+            </div>
         </div>
-      </div>
+
+        <div class="first">
+            <div class="row">
+                <img class="fourle" src="images\eren.jpg">
+                <div class="video-time"> 45:30 </div>
+            </div>
+            <div class="video-info-grid ">
+                <div class="channel-picture">
+                    <img class="fourle2" src="images\eren.jpg">
+                </div>
+                <div class="video-info">
+                    <p class="vide">Goats of all the time animes</p>
+                    <p class="mar"> Ethical Jenses &#10003;</p>
+                    <p class="vieu"> 1.4M views &#183;6 months ago </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="first">
+            <div class="row">
+                <img class="fourle" src="images\Attack_on_Titan_S3_Key_Visual_2.webp">
+                <div class="video-time"> 50:30 </div>
+            </div>
+            <div class="video-info-grid">
+                <div class="channel-picture">
+                    <img class="fourle2" src="images\Attack_on_Titan_S3_Key_Visual_2.webp">
+                </div>
+                <div class="video-info">
+                    <p class="vide">The coolest Akerman Characters </p>
+                    <p class="mar"> AOT Fans &#10003;</p>
+                    <p class="vieu"> 32.4M views &#183; 5 months ago </p>
+                </div>
+            </div>
+        </div>
     </div>
-    <!-- More videos can go here -->
-  </div>
 </body>
 </html>
